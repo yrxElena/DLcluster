@@ -53,7 +53,8 @@ def loadDataSet(path, dim):
             dic_eps[dis_mean[index]][i] = value
         #Plist[index] -= count;
             #Plist[i] += sum(element <= dis_mean[i] for element in row);
-    Plist = np.divide(Plist, count)
+    Plist = np.divide(Plist, count);
+>>>>>>>>> Temporary merge branch 2
     return data, Dis, dic_eps, dis_mean, Plist
  
 # 计算两个点之间的欧式距离，参数为两个元组
