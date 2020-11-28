@@ -12,8 +12,10 @@ list_2 = []
 
 def loadDataSet(path, dim):
     """
+    加载所需的数据集
     path:数据集路径
     dim:数据维度
+    return：数据data, 距离矩阵Dis, dic_eps, dis_mean, Plist
     """
     with open(path, 'r') as fd:
         raw_data = fd.readlines()
@@ -51,10 +53,7 @@ def loadDataSet(path, dim):
                     value.append(j)
                     Plist[index] += 1
             dic_eps[dis_mean[index]][i] = value
-        #Plist[index] -= count;
-            #Plist[i] += sum(element <= dis_mean[i] for element in row);
     Plist = np.divide(Plist, count);
->>>>>>>>> Temporary merge branch 2
     return data, Dis, dic_eps, dis_mean, Plist
  
 # 计算两个点之间的欧式距离，参数为两个元组
@@ -65,11 +64,11 @@ def loadDataSet(path, dim):
 #    return dis
 
 def DBscan(Dic, Eps, MinPts):
-    '''
+    """
     Dic:数据集字典
     Eps:邻域半径参数
     MinPts:制定邻域密度阈值（核心点阈值）
-    '''
+    """
     count = len(Eps)
     value_k = []
     C = [i for i in range(count)]
@@ -106,7 +105,7 @@ def DBscan(Dic, Eps, MinPts):
         value_k.append(k)
         if(index > 3):
             if(value_k[-4] == value_k[-5] and value_k[-2] == value_k[-3] and value_k[-2] == value_k[-4] and value_k[-1] != value_k[-2]):
-                return C[index - 1], Eps[index - 1], MinPts[index - 1]
+                 return C[index - 1], Eps[index - 1], MinPts[index - 1]
     #return value_k
 
 if  __name__ == "__main__":

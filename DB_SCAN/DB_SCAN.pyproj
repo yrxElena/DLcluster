@@ -24,8 +24,7 @@
     <Compile Include="DB_SCAN.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="788points.txt" />
-    <Content Include="dataset.xlsx" />
+    <Content Include="dataset.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
